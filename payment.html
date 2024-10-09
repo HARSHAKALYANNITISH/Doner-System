@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #343a40;
+      color: #f8f9fa;
+    }
+    .payment-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #495057;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .payment-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .payment-header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .form-label {
+      font-weight: bold;
+      color: #f8f9fa;
+    }
+    .form-control {
+      background-color: #6c757d;
+      color: white;
+      border: 1px solid #ced4da;
+    }
+    .form-control::placeholder {
+      color: #e9ecef;
+    }
+    .submit-btn {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+    /* Navbar styling */
+    .navbar-dark .navbar-brand, .navbar-dark .nav-link {
+      color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Donor Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/payment">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/doner">Donate</a>
+                    </li>
+                        <a class="nav-link" href="/login">Login</a>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <!-- Payment Form -->
+  <div class="container payment-container">
+    <div class="payment-header">
+      <h1>Donation Payment</h1>
+      <p>Please complete the form below to process your donation payment.</p>
+    </div>
+
+    <form action="/payment" method="post">
+      <div class="mb-3">
+        <label for="donorName" class="form-label">Donor Name</label>
+        <input type="text" class="form-control" id="donorName" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="donationAmount" class="form-label">Donation Amount</label>
+        <input type="number" class="form-control" id="donationAmount" placeholder="Enter amount to donate" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="cardNumber" class="form-label">Card Number</label>
+        <input type="text" class="form-control" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="expiryDate" class="form-label">Expiry Date</label>
+          <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="text" class="form-control" id="cvv" placeholder="3 digits" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Submit Payment</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
